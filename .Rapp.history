@@ -1,0 +1,538 @@
+tail(dat)
+good_data<-!is.na(dat)
+head(good_data)
+?nrow
+sres<-c(i,nrow(dat[good_data[,2]&good_data[,3]==TRUE]))
+sres<-c(1,nrow(dat[good_data[,2]&good_data[,3]==TRUE]))
+sres<-c(1,nrow(dat[good_data[,"sulfate"]&good_data[,"nitrate"]==TRUE]))
+sres<-c(1,nrow(dat[good_data[,sulfate]&good_data[,nitrate]==TRUE]))
+sres<-c(1,nrow(dat[good_data[sulfate]&good_data[nitrate]==TRUE]))
+sres<-c(1,nrow(dat[good_data[sulfate]==TRUE&good_data[nitrate]==TRUE]))
+sres<-c(1,nrow(dat[good_data[nitrate]==TRUE&good_data[nitrate]==TRUE]))
+sres<-c(1,dat[good_data[sulfate]==TRUE&good_data[nitrate]==TRUE])
+dat[good_data[sulfate]]
+dat[good_data["sulfate"]]
+dat[good_data[,"sulfate"]]
+dat[good_data[,sulfate]]
+head(dat)
+head(good_data)
+complete.case(good_data)
+complete.cases(good_data)
+dat[complete.cases(good_data)]
+dat(complete.cases(good_data))
+dat(1)
+dat[1]
+head(dat[,1])
+head(dat[1,])
+head(dat[complete.cases(good_data),])
+head(dat[good_data[2,]&good_data[3,]])
+head(dat[good_data[2,]&good_data[3,]==TRUE])
+nrow(dat[complete.cases(good_data),])
+nrow(dat[complete.cases(dat),])
+complete<-function(directory,id=1:332){#
+	files_list<-list.files(directory,full.names=TRUE)#
+result<-matrix(NA,0,2)#
+	dat<-NULL#
+	for(i in id){#
+		dat<-read.csv(files_list[i],header=TRUE)#
+		good_row<-nrow(dat[complete.cases(dat),])#
+		temp_res<-c(i,good_row)	#
+		result<-rbind(result,temp_res)#
+		}#
+#
+}
+complete("specdata",1)
+result
+complete<-function(directory,id=1:332){#
+	files_list<-list.files(directory,full.names=TRUE)#
+result<-matrix(NA,0,2)#
+	dat<-NULL#
+	for(i in id){#
+		dat<-read.csv(files_list[i],header=TRUE)#
+		good_row<-nrow(dat[complete.cases(dat),])#
+		temp_res<-c(i,good_row)	#
+		result<-rbind(result,temp_res)#
+		}#
+print(result)#
+}
+complete("specdata",1)
+complete<-function(directory,id=1:332){#
+	files_list<-list.files(directory,full.names=TRUE)#
+result<-matrix(NA,0,2)#
+	dat<-NULL#
+	for(i in id){#
+		dat<-read.csv(files_list[i],header=TRUE)#
+		good_row<-nrow(dat[complete.cases(dat),])#
+		temp_res<-c(i,good_row)	#
+		result<-rbind(result,temp_res)#
+		}#
+colnames(result)<-c("id","nobs")#
+result#
+}
+complete("specdata",1)
+complete<-function(directory,id=1:332){#
+	files_list<-list.files(directory,full.names=TRUE)#
+result<-NULL#
+	dat<-NULL#
+	for(i in id){#
+		dat<-read.csv(files_list[i],header=TRUE)#
+		good_row<-nrow(dat[complete.cases(dat),])#
+		temp_res<-c(i,good_row)	#
+		result<-rbind(result,temp_res)#
+		}#
+colnames(result)<-c("id","nobs")#
+result#
+}
+complete("specdata",1)
+complete<-function(directory,id=1:332){#
+	files_list<-list.files(directory,full.names=TRUE)#
+result<-data.frame()#
+dat<-NULL#
+	for(i in id){#
+		dat<-read.csv(files_list[i],header=TRUE)#
+		good_row<-nrow(dat[complete.cases(dat),])#
+		temp_res<-c(i,good_row)	#
+		result<-rbind(result,temp_res)#
+		}#
+colnames(result)<-c("id","nobs")#
+result#
+}
+complete("specdata",1)
+complete("specdata",1:3)
+complete("specdata",3)
+complete("specdata",30:25)
+complete<-NULL
+source(complete.R)
+source("complete.R")
+complete("specdata",3)
+submit()
+source("http://d396qusza40orc.cloudfront.net/rprog%2Fscripts%2Fsubmitscript1.R")
+submit()
+complete("specdata",3)
+complete.dir<-complete("specdata",3)
+complete.dir$id
+complete.dir$id[complete.dir$nobs>150]
+?cor
+corr<-function(directory,threshold=0){#
+	source(file="complete.R")#
+	cr<-vector(NULL)#
+	complete.dir<-complete(directory)#
+	if(complete.dir$id[complete.dir$nobs>threshold])#
+	{#
+		for(i in complete.dir$id){#
+			cor<-cor(x=dat$sulfate,y=dat$nitrate,use="complete.obs")#
+			cr<-c(cr,cor)#
+		}#
+	}#
+	else{#
+		cr<-vector(NULL)	}	#
+	}#
+	cr#
+}
+corr<-function(directory,threshold=0){#
+	source(file="complete.R")#
+	cr<-vector()#
+	complete.dir<-complete(directory)#
+	if(complete.dir$id[complete.dir$nobs>threshold])#
+	{#
+		for(i in complete.dir$id){#
+			cor<-cor(x=dat$sulfate,y=dat$nitrate,use="complete.obs")#
+			cr<-c(cr,cor)#
+		}#
+	}#
+	else{#
+		cr<-vector()	}	#
+	}#
+	cr#
+}
+corr<-function(directory,threshold=0){#
+	source(file="complete.R")#
+	cr<-NULL#
+	complete.dir<-complete(directory)#
+	if(complete.dir$id[complete.dir$nobs>threshold])#
+	{#
+		for(i in complete.dir$id){#
+			cor<-cor(x=dat$sulfate,y=dat$nitrate,use="complete.obs")#
+			cr<-c(cr,cor)#
+		}#
+	}#
+	else{#
+		cr<-NULL	}	#
+	}#
+	cr#
+}
+corr<-function(directory,threshold=0){#
+	source(file="complete.R")#
+	cr<-vector(mode="numeric")#
+	complete.dir<-complete(directory)#
+	if(complete.dir$id[complete.dir$nobs>threshold])#
+	{#
+		for(i in complete.dir$id){#
+			cor<-cor(x=dat$sulfate,y=dat$nitrate,use="complete.obs")#
+			cr<-c(cr,cor)#
+		}#
+	}#
+	else{#
+		cr<-NULL	}	#
+	}#
+	cr#
+}
+corr<-function(directory,threshold=0){#
+	source(file="complete.R")#
+	cr<-vector(mode="numeric")#
+	complete.dir<-complete(directory)#
+	if(complete.dir$id[complete.dir$nobs>threshold])#
+	{#
+		for(i in complete.dir$id){#
+			cor<-cor(x=dat$sulfate,y=dat$nitrate,use="complete.obs")#
+			cr<-c(cr,cor)#
+		}#
+	}#
+	else{#
+		cr<-NULL	}	#
+	cr#
+}
+corr("specdata")
+corr("specdata",150)
+corr<-function(directory,threshold=0){#
+	source(file="complete.R")#
+	output<-vector(mode="numeric")#
+	complete.dir<-complete(directory)#
+	if(complete.dir$id[complete.dir$nobs>threshold])#
+	{#
+		for(i in complete.dir$id){#
+			cor<-cor(x=dat$sulfate,y=dat$nitrate,use="complete.obs")#
+			output<-c(output,cor)#
+		}#
+	}#
+	else{#
+		output<-NULL	}	#
+	output#
+}
+cr<-corr("specdata",150)
+head(cr)
+complete("specdata")
+corr<-function(directory,threshold=0){#
+	source(file="complete.R")#
+	output<-vector(mode="numeric")#
+	complete.dir<-complete(directory)##complete ganze range ausgeführt#
+	if(complete.dir$nobs>threshold])#
+	{#
+		for(i in complete.dir$id){#
+			cor<-cor(x=dat$sulfate,y=dat$nitrate,use="complete.obs")#
+			output<-c(output,cor)#
+		}#
+	}#
+	else{#
+		output<-NULL	}	#
+	output#
+}
+corr<-function(directory,threshold=0){#
+	source(file="complete.R")#
+	output<-vector(mode="numeric")#
+	complete.dir<-complete(directory)##complete ganze range ausgeführt#
+	if(complete.dir$nobs>threshold)#
+	{#
+		for(i in complete.dir$id){#
+			cor<-cor(x=dat$sulfate,y=dat$nitrate,use="complete.obs")#
+			output<-c(output,cor)#
+		}#
+	}#
+	else{#
+		output<-NULL	}	#
+	output#
+}
+head(cr)
+cr<-corr("specdata",150)
+cr<-complete("specdata")
+head(cr)
+head(cr$id[cr$nobs])
+cr$id
+head(cr)
+cr$nobs
+cr$id[cr$nobs>150]
+corr<-function(directory,threshold=0){#
+	source(file="complete.R")#
+	output<-vector(mode="numeric")#
+	complete.dir<-complete(directory)##complete ganze range ausgeführt#
+	if(complete.dir$nobs>threshold)#
+	{#
+		for(i in complete.dir$id[complete.dir$nobs>threshold]){#
+			cor<-cor(x=dat$sulfate,y=dat$nitrate,use="complete.obs")#
+			output<-c(output,cor)#
+		}#
+	}#
+	else{#
+		output<-NULL	}	#
+	output#
+}
+cr<-corr("specdata",150)
+corr<-function(directory,threshold=0){#
+	source(file="complete.R")#
+	output<-vector(mode="numeric")#
+	complete.dir<-complete(directory)##complete ganze range ausgeführt#
+	id_of_nob_greater_thresh <-complete.dir$id[complete.dir$nobs>threshold]#
+		for(i in id_of_nob_greater_thresh){#
+			cor<-cor(x=dat$sulfate,y=dat$nitrate,use="complete.obs")#
+			output<-c(output,cor)#
+		}#
+	}#
+	else{#
+		output<-NULL	}	#
+	output#
+}
+corr<-function(directory,threshold=0){#
+	source(file="complete.R")#
+	output<-vector(mode="numeric")#
+	complete.dir<-complete(directory)##complete ganze range ausgeführt#
+	id_of_nob_greater_thresh <-complete.dir$id[complete.dir$nobs>threshold]#
+		for(i in id_of_nob_greater_thresh){#
+			cor<-cor(x=dat$sulfate,y=dat$nitrate,use="complete.obs")#
+			output<-c(output,cor)#
+		}#
+	output#
+}
+cr<-corr("specdata",150)
+head(cr)
+corr <- function(directory, threshold = 0) {#
+  ## 'directory' is a character vector of length 1 indicating#
+  ## the location of the CSV files#
+  ## 'threshold' is a numeric vector of length 1 indicating the#
+  ## number of completely observed observations (on all#
+  ## variables) required to compute the correlation between#
+  ## nitrate and sulfate; the default is 0#
+  ## Return a numeric vector of correlations#
+  source(file='complete.R')#
+  complete.df <- complete(directory)#
+  id.greater.thresh <- complete.df$id[complete.df$nobs > threshold]#
+  output <- vector(mode='numeric')#
+  for (i in id.greater.thresh) {#
+    data <- getmonitor(id=i, directory=directory)#
+    cor.one.monitor <- cor(x=data$sulfate, y=data$nitrate, use="complete.obs")#
+    output <- c(output, cor.one.monitor)#
+  }#
+  output
+corr <- function(directory, threshold = 0) {#
+  ## 'directory' is a character vector of length 1 indicating#
+  ## the location of the CSV files#
+  ## 'threshold' is a numeric vector of length 1 indicating the#
+  ## number of completely observed observations (on all#
+  ## variables) required to compute the correlation between#
+  ## nitrate and sulfate; the default is 0#
+  ## Return a numeric vector of correlations#
+  source(file='complete.R')#
+  complete.df <- complete(directory)#
+  id.greater.thresh <- complete.df$id[complete.df$nobs > threshold]#
+  output <- vector(mode='numeric')#
+  for (i in id.greater.thresh) {#
+    data <- getmonitor(id=i, directory=directory)#
+    cor.one.monitor <- cor(x=data$sulfate, y=data$nitrate, use="complete.obs")#
+    output <- c(output, cor.one.monitor)#
+  }#
+  output#
+}
+cr<-corr("specdata",150)
+head
+corr <- function(directory, threshold = 0) {#
+  ## 'directory' is a character vector of length 1 indicating#
+  ## the location of the CSV files#
+  ## 'threshold' is a numeric vector of length 1 indicating the#
+  ## number of completely observed observations (on all#
+  ## variables) required to compute the correlation between#
+  ## nitrate and sulfate; the default is 0#
+  ## Return a numeric vector of correlations#
+  source(file='complete.R')#
+  complete.df <- complete(directory)#
+  id.greater.thresh <- complete.df$id[complete.df$nobs > threshold]#
+  output <- vector(mode='numeric')#
+  for (i in id.greater.thresh) {#
+    data <- getmonitor(id=i, directory=directory)#
+    cor.one.monitor <- cor(x=data$sulfate, y=data$nitrate, use="complete.obs")#
+    output <- c(output, cor.one.monitor)#
+  }#
+  output#
+}
+cr<-corr("specdata",150)
+corr<-function(directory,threshold=0){#
+	source(file="complete.R")#
+	output<-vector(mode="numeric")#
+	complete.dir<-complete(directory)##complete ganze range ausgeführt#
+	id_of_nob_greater_thresh <-complete.dir$id[complete.dir$nobs>threshold]#
+		for(i in id_of_nob_greater_thresh){#
+			dat<-read.csv(files_list[i],header=TRUE)#
+			cor<-cor(x=dat$sulfate,y=dat$nitrate,use="complete.obs")#
+			output<-c(output,cor)#
+		}#
+	output#
+}
+cr<-corr("specdata",150)
+corr<-function(directory,threshold=0){#
+	source(file="complete.R")#
+	output<-vector(mode="numeric")#
+	complete.dir<-complete(directory)##complete ganze range ausgeführt#
+	id_of_nob_greater_thresh <-complete.dir$id[complete.dir$nobs>threshold]#
+	files_list<-list.files(directory,full.names=TRUE)#
+dat<-NULL#
+		for(i in id_of_nob_greater_thresh){#
+			dat<-read.csv(files_list[i],header=TRUE)#
+			cor<-cor(x=dat$sulfate,y=dat$nitrate,use="complete.obs")#
+			output<-c(output,cor)#
+		}#
+	output#
+}
+cr<-corr("specdata",150)
+head(cr)
+cr<-corr("specdata",400)
+head(cr)
+source("http://d396qusza40orc.cloudfront.net/rprog%2Fscripts%2Fsubmitscript1.R")
+submit()
+library(datasets)
+data(iris)
+?iris
+head(iris)
+head(iris$virginica)
+head(iris[virginica,])
+head(iris[,virginica])
+iris_virginica<-iris[which(iris[,"Species"]=="virginica"),]
+head(iris_virginica)
+tail(iris_virginica)
+?mean
+mean(iris_virginica$Sepal.Length)
+dim(iris)
+?apply
+vector_iris<-apply(iris[,1:4],2,mean)
+head(vector_iris)
+vector_iris
+vector_iris<-apply(iris[,1:4],1,mean)
+vector_iris
+head(vector_iris)
+vector_iris<-apply(iris,1,mean)
+library(datasets)
+data(mtcars)
+head(mtcars)
+dim(mtcars)
+tapply(mtcars$cyl, mtcars$mpg,mean)
+lapply(mtcars,mean)
+?with
+with(mtcars,tapply(mpg,cyl,mean))
+split(mtcars,mtcars$cyl)
+lapply(mtcars,mean)
+mtcars_8cyl<-mtcars[which(mtcars[,"cyl"]==8),]
+head(mtcars)
+head(mtcars_8cyl)
+dim(mtcars_8cyl)
+mtcars_8cyl<-mtcars[which(mtcars[,"cyl"]==8),mtcars$hp]
+mtcars_8cyl<-mtcars[which(mtcars[,"cyl"]==8),mtcars[,"hp"]]
+mtcars_8cyl<-mtcars[which(mtcars[,"cyl"]==8)&mtcars[,"hp"],]
+mtcars_8cyl<-mtcars[which(mtcars[,"cyl"]==8),]
+mtcars_8cyl$hp
+mean(mtcars_8cyl$hp)
+mtcars_4cyl<-mtcars[which(mtcars[,"cyl"]==4),]
+mean(mtcars_4cyl$hp)-mean(mtcars_8cyl$hp)
+mean(mtcars_8cyl$hp)-mean(mtcars_4cyl$hp)
+debug(ls)
+ls()
+2
+3
+4
+5
+1
+?debug
+exit
+()
+debug
+debug()
+a
+b
+grey
+source("makeVector.R")
+source("cachemean.R")
+a$get()
+a<-makeVector(c(1,2,3,4))
+a$get()
+a$getmean()
+chacemean(a)
+cachemean(a)
+a$getmean()
+cachemean(a)
+a$set(c(1,2))
+a$get()
+a$getmean(a)
+cachemean(a)
+a$get()
+a$getmean()
+a$setmean(0)
+a$getmean()
+cachemean(a)
+a$getmean()
+a$cachemean()
+cachemean(a)
+a$get()
+a$getmean()
+a<-makeVector(c(1,2))
+a$get()
+cachemean(a)
+cachemean(a)
+a$getmean()
+b<-makeVector(c(1,3))
+b$getmean()
+source("makeCacheMatrix.R")
+ma<-makeCacheMatrix(c(1,2,3,4),nrow=2,ncol=3)
+ma<-makeCacheMatrix(matrix(c(1,2,3,4),nrow=2,ncol=3))
+ma<-makeCacheMatrix(matrix(c(1,2,3,4),nrow=2,ncol=3))
+source("makeCacheMatrix.R")
+ma<-makeCacheMatrix(matrix(c(1,2,3,4),nrow=2,ncol=3))
+ma$get()
+ma<-makeCacheMatrix(matrix(c(1,2,3,4),nrow=2,ncol=2))
+ma$get()
+solve(ma$get())
+source("cacheSolve.R")
+cachemean(ma)
+cacheSolve(ma)
+inv_m
+ls(environment(ma))
+ls(environment(ma))
+ls(environment(cacheSolve))
+cacheSolve(ma)
+source("makeCacheMatrix.R")
+ma
+ma<-makeCacheMatrix(matrix(c(1,2,3,4),nrow=2,ncol=2))
+ma
+ma$get
+ma$get()
+solve(ma$get())
+sacheSolve(ma)
+cacheSolve(ma)
+ma$getinv()
+source("cacheSolve.R")
+ma<-makeCacheMatrix(matrix(c(1,2,3,4),nrow=2,ncol=2))
+b<-makeCacheMatrix(matric(c(1,2,3,4),nrow=2,ncol=2))
+b
+b$get()
+b<-makeCacheMatrix(matrix(c(1,2,3,4),nrow=2,ncol=2))
+b$get()
+cacheSolve(b)
+b$getinv()
+source("cacheSolve.R")
+c<-makeCacheMatrix(matrix(c(1,2,3,4),nrow=2,ncol=2))
+c$get()
+cacheSolve(c)
+c$getinv
+c$getinv()
+cacheSolve(c)
+source("makeCacheMatrix.R")
+c<-makeCacheMatrix(matrix(c(1,2,3,4),nrow=2,ncol=2))
+c$get
+c$get()
+cacheSolve(c)
+git clone https://github.com/dexterslabor/ProgrammingAssignment2.git
+git clone https://github.com/dexterslabor/ProgrammingAssignment2.git isvan
+?wd
+getwd()
+setwd("Users/istvan/ProgrammingAssignment2")
+getwd()
+source("cachematrix.R")
+amatrix<-makeCacheMatrix(matrix(c(1,2,3,4),nrow=2,ncol=2))
+amatrix$get()
+ls(environment(cacheSolve))
+ls(get(cacheSolve))
